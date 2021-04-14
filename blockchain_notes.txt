@@ -1,0 +1,35 @@
+Oracle Notes
+
+Simply put an Oracle is a PROVIDER OF DATA
+
+It feeds information from the outside world to the smart contract.
+
+That data that a smart contract needs to run from the oracle must be secure, accurate, and untampered with
+or else the smart contract will execute unsecure or skewed information. 
+
+Relying on one single source for data creates a single point of failure. A physical object is only as strong as its weakest point and the same goes for
+DApps.
+
+“The security of any system is only as strong as its weakest link, so a highly trustworthy oracle is required to preserve the trustworthiness of a well-engineered blockchain.” — Chainlink Whitepaper
+
+Thus we have CHAINLINK
+
+Chainlink is a decentralized oracle network. Allowing smart contracts to connect to real-world data in a highly secure and reliable way.
+
+It fills the position of the middleware between the blockchain and an external API.
+
+If a smart contract needs information from an API, it would make a request to a node or nodes in the Chainlink network. Those nodes would make the API call, evaluate the data, and return it back to the smart contract. The nodes are incentivized to provide truthful data through LINK tokens. A purchaser of data (the smart contract) must send LINK tokens when requesting outside data.
+
+
+THE PLAY BY PLAY
+On-chain, a requesting smart contract (Requester) interfaces with a Chainlink oracle contract to make a request for data. The Requester Contract sends LINK tokens and data for the request. The on-chain oracle contract receives the LINK tokens and request and emits an event to the off-chain Chainlink network.
+Off-chain, Chainlink nodes are connected to the Ethereum blockchain and monitoring events. A Chainlink node will pick up an event and perform a request to an external API. The API returns data, which the Chainlink node returns back to the on-chain oracle. The oracle aggregates the responses and passes them back as a single response to the requesting contract.
+
+Distribution of sources
+To protect against a single faulty data source, you can tell your oracle contract to collect data from multiple sources. Rather than using one API, use three APIs and aggregate the results.
+
+Distribution of oracles
+To take it a step further, you can use multiple nodes to collect data from a source or from multiple sources. This provides greater decentralization as you are not relying on any one single node.
+
+
+
